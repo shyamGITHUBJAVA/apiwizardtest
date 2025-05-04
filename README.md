@@ -24,3 +24,25 @@ the supporting dto classes, controller and MockExternalAPIController are include
 i have used k6(performance testing tool) test.js file to load test to achieve desirable benchmarks
 
  
+----------------------------------------------------------
+
+for the additional assignment i.e script engine service utility program
+
+Honestly i tried using chatgpt, even chatgpt also guided me wrong because of so many updates in graalVM
+
+so to give a brief headsUP why i choosed graalvm is because of it's polyglot nature
+and i can use java nashorn script engine but in recent JDK's they have removed it, so i can write only python supported code with the help of jython
+to avoid these issues.
+
+i choosed graalVM which is a better for this usecase and polyglot supports so many languages like python, ruby, r etc..
+so graal was inspired by the christianity concept of Holy Grail which means a engine which supports all languages
+
+so in the process of finding this solution, i encountered gu (graal updater) issue which caused so much trouble to resolve it and found out that,
+it is removed in latest versions.
+
+so finally ith the  help of graalVM original website support docs i found the solution to embed other languages scripts in our java code.
+and used the polyglot dependencies and solved the problem
+
+there are certain limitations with the solution heavy 3rd party lib like numpy and pandas can't run because they heavily depend on nativeC/C++ libraries
+but with standard libraries, this solution works fine.
+
